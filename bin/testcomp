@@ -1,7 +1,7 @@
 #!perl
 
 our $DATE = '2014-12-27'; # DATE
-our $VERSION = '0.02'; # VERSION
+our $VERSION = '0.03'; # VERSION
 
 BEGIN { $ENV{TRACE} = 1 }
 
@@ -67,7 +67,7 @@ testcomp - Test your tab completion
 
 =head1 VERSION
 
-This document describes version 0.02 of testcomp (from Perl distribution App-CompleteUtils), released on 2014-12-27.
+This document describes version 0.03 of testcomp (from Perl distribution App-CompleteUtils), released on 2014-12-27.
 
 =head1 SYNOPSIS
 
@@ -102,6 +102,11 @@ Like Perl's C<-I>.
 =head1 SEE ALSO
 
 L<App::CompleteUtils>
+
+You can use this utility to test scripts using these frameworks:
+L<Perinci::CmdLine>, L<Getopt::Long::Complete>, L<Getopt::Long::Subcommand>. But
+actually all scripts which can complete itself by detecting C<COMP_LINE> and
+C<COMP_POINT> can be tested.
 
 =head1 HOMEPAGE
 
