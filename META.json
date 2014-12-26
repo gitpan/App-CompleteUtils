@@ -31,7 +31,9 @@
       "runtime" : {
          "requires" : {
             "Complete" : "0.06",
+            "Complete::Util" : "0",
             "File::Which" : "0",
+            "Getopt::Long::Complete" : "0",
             "Log::Any" : "0",
             "Log::Any::Adapter" : "0",
             "Log::Any::Adapter::ScreenColoredLevel" : "0",
@@ -60,7 +62,7 @@
          "web" : "https://github.com/perlancar/perl-App-CompleteUtils"
       }
    },
-   "version" : "0.01",
+   "version" : "0.02",
    "x_Dist_Zilla" : {
       "perl" : {
          "version" : "5.018002"

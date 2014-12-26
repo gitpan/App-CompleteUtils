@@ -1,0 +1,114 @@
+#!perl
+
+our $DATE = '2014-12-27'; # DATE
+our $VERSION = '0.02'; # VERSION
+# FRAGMENT id=shcompgen-hint completer=1 for=testcomp
+
+use 5.010;
+use strict;
+use warnings;
+
+use Getopt::Long::Complete qw(GetOptionsWithCompletion);
+
+die "This script is for shell completion only\n"
+        unless $ENV{COMP_LINE};
+
+GetOptionsWithCompletion(
+    sub {
+        my %args = @_;
+
+        my $word = $args{word} // '';
+        my $type = $args{type};
+        my $argpos = $args{argpos};
+
+        # XXX complete -I with module name
+
+        if ($type eq 'arg' && $argpos == 0) {
+            require Complete::Util;
+            Complete::Util::combine_answers(
+                Complete::Util::complete_file(word=>$word),
+                Complete::Util::complete_program(word=>$word),
+            );
+        }
+
+        # XXX complete arguments argpos>0 by trying to pass COMP_LINE and
+        # COMP_POINT to program in argpos 0. that would be cool, e.g. 'testcomp
+        # fatten --tra<tab>' can complete fatten command.
+
+    },
+    'include|I=s' => sub {},
+);
+
+# ABSTRACT: Completion script for testcomp
+# PODNAME: _testcomp
+
+__END__
+
+=pod
+
+=encoding UTF-8
+
+=head1 NAME
+
+_testcomp - Completion script for testcomp
+
+=head1 VERSION
+
+This document describes version 0.02 of _testcomp (from Perl distribution App-CompleteUtils), released on 2014-12-27.
+
+=head1 COMPLETION
+
+This script has shell tab completion capability with support for several shells.
+
+=head2 bash
+
+To activate bash completion for this script, put:
+
+ complete -C _testcomp _testcomp
+
+in your bash startup (e.g. C<~/.bashrc>). Your next shell session will then recognize tab completion for the command. Or, you can also directly execute the line above in your shell to activate immediately.
+
+It is recommended, however, that you install L<shcompgen> which allows you to activate completion scripts for several kinds of scripts on multiple shells. Some CPAN distributions (those that are built with L<Dist::Zilla::Plugin::GenShellCompletion>) will even automatically enable shell completion for their included scripts (using C<shcompgen>) at installation time, so you can immadiately have tab completion.
+
+=head2 tcsh
+
+To activate tcsh completion for this script, put:
+
+ complete _testcomp 'p/*/`_testcomp`/'
+
+in your tcsh startup (e.g. C<~/.tcshrc>). Your next shell session will then recognize tab completion for the command. Or, you can also directly execute the line above in your shell to activate immediately.
+
+It is also recommended to install C<shcompgen> (see above).
+
+=head2 other shells
+
+For fish and zsh, install C<shcompgen> as described above.
+
+=head1 HOMEPAGE
+
+Please visit the project's homepage at L<https://metacpan.org/release/App-CompleteUtils>.
+
+=head1 SOURCE
+
+Source repository is at L<https://github.com/perlancar/perl-App-CompleteUtils>.
+
+=head1 BUGS
+
+Please report any bugs or feature requests on the bugtracker website L<https://rt.cpan.org/Public/Dist/Display.html?Name=App-CompleteUtils>
+
+When submitting a bug or request, please include a test-file or a
+patch to an existing test-file that illustrates the bug or desired
+feature.
+
+=head1 AUTHOR
+
+perlancar <perlancar@cpan.org>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2014 by perlancar@cpan.org.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
+=cut

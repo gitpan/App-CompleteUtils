@@ -18,14 +18,17 @@ my %WriteMakefileArgs = (
   },
   "DISTNAME" => "App-CompleteUtils",
   "EXE_FILES" => [
-    "bin/testcomp"
+    "bin/testcomp",
+    "bin/_testcomp"
   ],
   "LICENSE" => "perl",
   "MIN_PERL_VERSION" => "5.010001",
   "NAME" => "App::CompleteUtils",
   "PREREQ_PM" => {
     "Complete" => "0.06",
+    "Complete::Util" => 0,
     "File::Which" => 0,
+    "Getopt::Long::Complete" => 0,
     "Log::Any" => 0,
     "Log::Any::Adapter" => 0,
     "Log::Any::Adapter::ScreenColoredLevel" => 0,
@@ -37,7 +40,7 @@ my %WriteMakefileArgs = (
     "IPC::Open3" => 0,
     "Test::More" => 0
   },
-  "VERSION" => "0.01",
+  "VERSION" => "0.02",
   "test" => {
     "TESTS" => "t/*.t"
   }
@@ -46,9 +49,11 @@ my %WriteMakefileArgs = (
 
 my %FallbackPrereqs = (
   "Complete" => "0.06",
+  "Complete::Util" => 0,
   "ExtUtils::MakeMaker" => 0,
   "File::Spec" => 0,
   "File::Which" => 0,
+  "Getopt::Long::Complete" => 0,
   "IO::Handle" => 0,
   "IPC::Open3" => 0,
   "Log::Any" => 0,

@@ -1,7 +1,7 @@
 package App::CompleteUtils;
 
 our $DATE = '2014-12-27'; # DATE
-our $VERSION = '0.01'; # VERSION
+our $VERSION = '0.02'; # VERSION
 
 use 5.010001;
 use strict;
@@ -22,7 +22,7 @@ App::CompleteUtils - Collection of CLI utilities for Dist::Zilla
 
 =head1 VERSION
 
-This document describes version 0.01 of App::CompleteUtils (from Perl distribution App-CompleteUtils), released on 2014-12-27.
+This document describes version 0.02 of App::CompleteUtils (from Perl distribution App-CompleteUtils), released on 2014-12-27.
 
 =head1 SYNOPSIS
 
