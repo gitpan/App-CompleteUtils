@@ -1,38 +1,9 @@
-NAME
-    App::CompleteUtils - Collection of CLI utilities for Dist::Zilla
-
-VERSION
-    This document describes version 0.03 of App::CompleteUtils (from Perl
-    distribution App-CompleteUtils), released on 2014-12-27.
-
 SYNOPSIS
+
     This distribution provides several command-line utilities related to
     (shell) completion and the Complete modules family.
 
 SEE ALSO
+
     Complete
-
-HOMEPAGE
-    Please visit the project's homepage at
-    <https://metacpan.org/release/App-CompleteUtils>.
-
-SOURCE
-    Source repository is at
-    <https://github.com/perlancar/perl-App-CompleteUtils>.
-
-BUGS
-    Please report any bugs or feature requests on the bugtracker website
-    <https://rt.cpan.org/Public/Dist/Display.html?Name=App-CompleteUtils>
-
-    When submitting a bug or request, please include a test-file or a patch
-    to an existing test-file that illustrates the bug or desired feature.
-
-AUTHOR
-    perlancar <perlancar@cpan.org>
-
-COPYRIGHT AND LICENSE
-    This software is copyright (c) 2014 by perlancar@cpan.org.
-
-    This is free software; you can redistribute it and/or modify it under
-    the same terms as the Perl 5 programming language system itself.
 
