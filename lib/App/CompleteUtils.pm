@@ -1,7 +1,7 @@
 package App::CompleteUtils;
 
-our $DATE = '2014-12-27'; # DATE
-our $VERSION = '0.04'; # VERSION
+our $DATE = '2014-12-29'; # DATE
+our $VERSION = '0.05'; # VERSION
 
 use 5.010001;
 use strict;
@@ -22,7 +22,7 @@ App::CompleteUtils - Collection of CLI utilities related to completion and Compl
 
 =head1 VERSION
 
-This document describes version 0.04 of App::CompleteUtils (from Perl distribution App-CompleteUtils), released on 2014-12-27.
+This document describes version 0.05 of App::CompleteUtils (from Perl distribution App-CompleteUtils), released on 2015-12-29.
 
 =head1 SYNOPSIS
 
